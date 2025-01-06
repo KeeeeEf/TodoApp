@@ -1,11 +1,15 @@
 using TodoApp.Web.Components;
 using TodoApp.Web.Services;
+using MudBlazor;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddMudServices();
 
 builder.Services.AddHttpClient("TodoApp.Api", options => 
 {
